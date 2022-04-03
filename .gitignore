@@ -1,0 +1,9 @@
+.DS_Store
+.env
+__pycache__/
+.idea/
+logs/
+alembic/.DS_Store
+file:/
+prod_env.yml
+cm_venv/
