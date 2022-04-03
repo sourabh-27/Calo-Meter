@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from sqlalchemy.orm import Session
 
-from api.api_v1.endpoints import login, users
+from api.api_v1.endpoints import login, users, items
 from fastapi.responses import JSONResponse
 from api import deps 
 import logging
@@ -26,3 +26,4 @@ def db_available(db: Session = Depends(deps.get_db)):
 
 api_router.include_router(login.router, tags=["login"])
 api_router.include_router(users.router, prefix="/users", tags=["users"])
+api_router.include_router(items.router, prefix="/items", tags=["items"])

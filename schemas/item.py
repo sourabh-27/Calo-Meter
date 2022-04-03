@@ -7,6 +7,7 @@ from pydantic import BaseModel
 class ItemBase(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
+    calories: Optional[int] = None
 
 
 # Properties to receive on item creation
