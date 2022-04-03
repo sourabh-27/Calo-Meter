@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 
 from pydantic import BaseModel
@@ -8,7 +9,6 @@ class ItemBase(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
     calories: Optional[int] = None
-
 
 # Properties to receive on item creation
 class ItemCreate(ItemBase):
@@ -32,7 +32,7 @@ class ItemInDBBase(ItemBase):
 
 # Properties to return to client
 class Item(ItemInDBBase):
-    pass
+    created_at: Optional[datetime] = None
 
 
 # Properties properties stored in DB

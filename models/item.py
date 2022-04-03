@@ -1,9 +1,12 @@
 from typing import TYPE_CHECKING
+from sqlalchemy.sql.sqltypes import DateTime
 
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 from database.base_class import Base
+from datetime import datetime
 
 if TYPE_CHECKING:
     from .user import User  # noqa: F401
@@ -16,3 +19,5 @@ class Item(Base):
     owner_id = Column(Integer, ForeignKey("user.id"))
     owner = relationship("User", back_populates="items")
     calories = Column(Integer)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime(timezone=True), default=datetime.now, onupdate=func.now())

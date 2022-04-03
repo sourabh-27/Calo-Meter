@@ -1,9 +1,12 @@
 from typing import TYPE_CHECKING
+from sqlalchemy.sql.sqltypes import DateTime
 
 from sqlalchemy import Boolean, Column, Integer, String
 from sqlalchemy.orm import relationship
+from sqlalchemy.sql import func
 
 from database.base_class import Base
+from datetime import datetime
 
 if TYPE_CHECKING:
     from .item import Item  # noqa: F401
@@ -18,3 +21,5 @@ class User(Base):
     is_superuser = Column(Boolean(), default=False)
     items = relationship("Item", back_populates="owner")
     target_calories = Column(Integer, default=2000)
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime(timezone=True), default=datetime.now, onupdate=func.now())

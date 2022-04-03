@@ -25,6 +25,7 @@ class CRUDItem(CRUDBase[Item, ItemCreate, ItemUpdate]):
         return (
             db.query(self.model)
             .filter(Item.owner_id == owner_id)
+            .order_by(Item.created_at.desc())
             .offset(skip)
             .limit(limit)
             .all()
