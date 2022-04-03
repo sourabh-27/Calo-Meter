@@ -28,6 +28,10 @@ if settings.BACKEND_CORS_ORIGINS:
         allow_headers=["*"],
     )
 
+@app.get('/')
+def root():
+    return {'message': 'Hello World'}
+
 @app.exception_handler(Exception)
 def global_exception_handler(request: Request, exc: Exception):
     #log your exception here
