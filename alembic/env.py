@@ -23,35 +23,9 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 # target_metadata = None
 
-from models import vendors, reward_types, game_types, games, user_game_rewards
-target_metadata = vendors.Base.metadata
+from models import user
+target_metadata = user.Base.metadata
 target_metadata = None
-
-target_metadata = reward_types.Base.metadata
-target_metadata = None
-
-target_metadata = game_types.Base.metadata
-target_metadata = None
-
-target_metadata = games.Base.metadata
-target_metadata = None
-
-target_metadata = user_game_rewards.Base.metadata
-target_metadata = None
-
-from models.streaks import user_latest_streak, user_streaks, streak_days, streak_types
-target_metadata = user_latest_streak.Base.metadata
-target_metadata = None
-
-target_metadata = user_streaks.Base.metadata
-target_metadata = None
-
-target_metadata = streak_days.Base.metadata
-target_metadata = None
-
-target_metadata = streak_types.Base.metadata
-
-
 
 
 
