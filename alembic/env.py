@@ -23,8 +23,11 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 # target_metadata = None
 
-from models import user
+from models import user, item
 target_metadata = user.Base.metadata
+target_metadata = None
+
+target_metadata = item.Base.metadata
 target_metadata = None
 
 
