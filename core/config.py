@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = secrets.token_urlsafe(32)
     SECRET_KEY_CM: str = os.getenv("SECRET_KEY_CM")
     # 60 minutes * 24 hours * 8 days = 8 days
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 8 * 10
     SERVER_NAME: str = 'localhost'
     SERVER_HOST: AnyHttpUrl = "http://localhost:8000"
     redis_dsn = os.getenv("REDIS_HOST")
