@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     redis_dsn = os.getenv("REDIS_HOST")
     WRITEKEY: str = os.getenv("WRITEKEY")
     DEVICETYPE: str = os.getenv("DEVICETYPE")
-    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost", "http://localhost:4200", "http://localhost:3000", "http://localhost:4000"]
+    BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = ["http://localhost", "http://localhost:4200", "http://localhost:3000", "http://localhost:4000", "http://localhost:8000", "http://localhost:8080" ]
     # BACKEND_CORS_ORIGINS is a JSON-formatted list of origins
     # e.g: '["http://localhost", "http://localhost:4200", "http://localhost:3000", \
     # "http://localhost:8080", "http://local.dockertoolbox.tiangolo.com"]'
